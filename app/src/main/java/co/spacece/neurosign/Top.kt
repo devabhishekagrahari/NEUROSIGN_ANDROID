@@ -1,0 +1,45 @@
+package co.spacece.neurosign
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun AppTopBar() {
+    TopAppBar(
+        title = {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.logo),
+                    contentDescription = "Logo",
+                    modifier = Modifier.size(40.dp)
+                )
+                Text(text = "Homepage")
+            }
+        },
+        actions = {
+            IconButton(onClick = { /* TODO: Menu action */ }) {
+                Icon(
+                    painter = painterResource(id = R.drawable.menu),
+                    contentDescription = "Menu"
+                )
+            }
+        }
+    )
+}
