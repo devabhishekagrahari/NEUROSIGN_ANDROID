@@ -6,12 +6,12 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import co.spacece.neurosign.hobbyPredictor.ui.HobbyPredictorScreen
+//import co.spacece.neurosign.hobbyPredictor.ui.HobbyPredictorScreen
 import co.spacece.neurosign.hobbyPredictor.ui.ScreenB
-import co.spacece.neurosign.home.products.ProductsScreen
+import co.spacece.neurosign.home.products.OurProductsScreen
 import co.spacece.neurosign.home.products.ScreenA
 
-
+/*
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
@@ -28,3 +28,5 @@ fun Navigation() {
             }
         }
 }
+
+ */
