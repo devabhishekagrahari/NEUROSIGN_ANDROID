@@ -1,4 +1,4 @@
-package co.spacece.neurosign.Home.Products
+package co.spacece.neurosign.home.products
 
 import androidx.compose.ui.graphics.vector.ImageVector
 

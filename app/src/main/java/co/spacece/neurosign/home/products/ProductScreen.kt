@@ -1,4 +1,4 @@
-package co.spacece.neurosign.Home.Products
+package co.spacece.neurosign.home.products
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -11,11 +11,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import co.spacece.neurosign.AppTopBar
+import co.spacece.neurosign.BottomNavigation
 import co.spacece.neurosign.R
+import kotlinx.serialization.Serializable
 
 
 @Composable
 fun ProductsScreen() {
+    Scaffold (topBar = { AppTopBar(title ="Products") }, bottomBar = { BottomNavigation()}){paddingValues ->
+
     val products = listOf(
         Product(
             id = 1,
@@ -63,7 +68,11 @@ fun ProductsScreen() {
             ProductCard(product)
         }
     }
+    }
+
 }
 
+@Serializable
+object ScreenA
 
 
