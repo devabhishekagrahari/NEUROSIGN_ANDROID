@@ -1,4 +1,4 @@
-"package co.spacece.neurosign.ContactUS.Utils" 
+package co.spacece.neurosign.ContactUS.Utils
 
 class ConstantApp {
 

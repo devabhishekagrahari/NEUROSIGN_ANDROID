@@ -6,20 +6,22 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import co.spacece.neurosign.AppTopBar
-import co.spacece.neurosign.BottomNavigation
+import androidx.navigation.compose.rememberNavController
+import co.spacece.neurosign.Navigation.AppTopBar
+import co.spacece.neurosign.Navigation.BottomNavigation
 import co.spacece.neurosign.R
 import kotlinx.serialization.Serializable
 
 
 @Composable
-fun ProductsScreen() {
-    Scaffold (topBar = { AppTopBar(title ="Products") }, bottomBar = { BottomNavigation()}){paddingValues ->
+fun OurProductsScreen(){
 
     val products = listOf(
         Product(
@@ -48,29 +50,46 @@ fun ProductsScreen() {
         )
     )
 
-    LazyColumn(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color(0xFFEEEEEE))
-            .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
-    ) {
-        item {
-            Text(
-                text = "Our Products",
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Medium,
-                modifier = Modifier.padding(vertical = 16.dp)
-            )
-        }
 
-        items(products) { product ->
-            ProductCard(product)
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color(0xFFEEEEEE))
+                .padding(12.dp)
+        ) {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .shadow(4.dp, shape = MaterialTheme.shapes.medium),
+                colors = CardDefaults.cardColors(containerColor = Color.White)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = "Our Products",
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.padding(bottom = 16.dp)
+                    )
+
+                    LazyColumn(
+                        verticalArrangement = Arrangement.spacedBy(12.dp),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        items(products) { product ->
+                            ProductsCard(product = product)
+                        }
+                    }
+                }
+            }
         }
     }
-    }
 
-}
 
 @Serializable
 object ScreenA

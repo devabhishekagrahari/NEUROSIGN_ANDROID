@@ -23,14 +23,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.neurosign.R
-import com.example.neurosign.Utils.ConstantApp
-import com.example.neurosign.ui.theme.contact_us_inner_card_border_color
+import co.spacece.neurosign.R
+//import co.spacece.neurosign.Utils.ConstantApp
+//import co.spacece.neurosign.ui.theme.contact_us_inner_card_border_color
 
 @Preview(showBackground = true)
 @Composable
 fun ContactUsScreen() {
     // Wrapping entire UI inside a Card with rounded corners
+    /*
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -121,5 +122,7 @@ fun ContactCard(iconRes: Int, text: String) {
             )
         }
     }
+
+     */
 }
 

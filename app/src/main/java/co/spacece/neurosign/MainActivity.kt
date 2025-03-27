@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Scaffold
+import androidx.navigation.compose.rememberNavController
+import co.spacece.neurosign.Navigation.AppNavigation
 import co.spacece.neurosign.ui.theme.NeuroSignTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +15,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NeuroSignTheme{
-                    Navigation()
+                    //Navigation()
+                val navController = rememberNavController()
+                AppNavigation(navController)
                 }
             }
         }
