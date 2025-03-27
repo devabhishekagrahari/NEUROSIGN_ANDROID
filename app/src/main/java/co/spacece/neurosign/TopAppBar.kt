@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppTopBar() {
+fun AppTopBar(title:String) {
     TopAppBar(
         title = {
             Row(
@@ -30,7 +30,7 @@ fun AppTopBar() {
                     contentDescription = "Logo",
                     modifier = Modifier.size(40.dp)
                 )
-                Text(text = "Homepage")
+                Text(text = title)
             }
         },
         actions = {
