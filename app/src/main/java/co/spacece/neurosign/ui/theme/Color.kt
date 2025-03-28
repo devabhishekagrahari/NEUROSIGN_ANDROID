@@ -11,10 +11,14 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val Primary=Color(0xFFF8A800)
-val Light=Color(0xFFCCCCCC)
+//val Light=Color(0xFFCCCCCC)
 
 
 val AppPrimary = Color(0xFFF8A800)
 val AppAccent = Color(0xFF85D5EF)
 val DarkText = Color(0xFF333333)
 val LightGray = Color(0xFFEEEEEE)
+val Background = Color(0xFFEEEEEE)
+val Dark = Color(0xFF333333)
+val Medium = Color(0xFF666666)
+val Light = Color(0xCCCCCCCC)
