@@ -30,14 +30,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import co.spacece.neurosign.hobbyPredictor.HobbyPredictorQuestionAnswerModel
 import co.spacece.neurosign.hobbyPredictor.HobbyPredictorViewModel
 import co.spacece.neurosign.ui.theme.Light
 
 @Composable
-fun HobbyPredictorQuestionsView(
-     viewModel:HobbyPredictorViewModel
-){
+fun HobbyPredictorQuestionsView(){
     Column(modifier = Modifier
         .fillMaxWidth()
         .padding(16.dp)
@@ -46,10 +45,8 @@ fun HobbyPredictorQuestionsView(
         .padding(16.dp)
     ) {
 
-
+        val viewModel = viewModel<HobbyPredictorViewModel>()
         val hobbyPredictorQuestionsAnswerList=viewModel.hobbyPredictorQuestionAnswerList.collectAsState()
-
-
 
         Text(text = "Enter Your Child Details", fontSize = 24.sp, fontWeight = FontWeight.SemiBold)
 
@@ -120,7 +117,11 @@ fun CustomNumberInputField(
 
         Row(horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
             Box(modifier = Modifier
-                .clickable { if(questionAnswer.answer!="") { viewModel.subtractFromIntAnswer(questionAnswer.question)} }
+                .clickable {
+                    if (questionAnswer.answer != "") {
+                        viewModel.subtractFromIntAnswer(questionAnswer.question)
+                    }
+                }
                 .size(14.dp, 2.dp)
                 .background(Color.Red))
             Box (contentAlignment = Alignment.Center, modifier = Modifier
