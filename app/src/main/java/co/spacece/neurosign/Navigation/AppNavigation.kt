@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import co.spacece.neurosign.Home.About.AboutUsScreen
 import co.spacece.neurosign.Home.HomeScreen
 import co.spacece.neurosign.Home.Products.Assessment.EarlyAssessmentScreen
+import co.spacece.neurosign.Home.Products.Assessment.LearningDisorderDetection
 import co.spacece.neurosign.Home.Products.SignLanguage.SignLanguageScreen
 import co.spacece.neurosign.Home.Products.StoryTelling.StoryGeneratorScreen
 import co.spacece.neurosign.Home.Splash.SplashScreen
@@ -26,5 +27,7 @@ fun AppNavigation(navController: NavHostController) {
         composable("early_assessment") { EarlyAssessmentScreen(navController) }
         composable("sign_language") { SignLanguageScreen(navController) }
         composable("story_generator") { StoryGeneratorScreen(navController) }
+        composable("learn_detection") { LearningDisorderDetection(navController) }
+
     }
 }
