@@ -13,17 +13,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.currentBackStackEntryAsState
+import co.spacece.neurosign.R
 
-data class NavigationItem(val title: String, val icon: ImageVector, val route: String)
+//data class NavigationItem(val title: String, val icon: ImageVector, val route: String)
+data class NavigationItem(val route: String, val imageRes: Int, val imageResSelected: Int)
 
 @Composable
 fun BottomNavigation(navController: NavHostController) {
     val items = listOf(
+        /*
         NavigationItem("Our Products", Icons.Filled.MoreVert, "products"),
         NavigationItem("About Us", Icons.Filled.Info, "about"),
         NavigationItem("Contact Us", Icons.Filled.Call, "contact")
+
+         */
+        NavigationItem("about", R.drawable.about_us, R.drawable.about_us_o),
+        NavigationItem("products", R.drawable.our_products, R.drawable.our_products_o),
+        NavigationItem("contact", R.drawable.contact_us, R.drawable.contact_us_o)
     )
 
     NavigationBar(
@@ -34,23 +43,39 @@ fun BottomNavigation(navController: NavHostController) {
         val currentDestination = navController.currentBackStackEntryAsState().value?.destination?.route
 
         items.forEach { item ->
+            val isSelected = currentDestination == item.route
             NavigationBarItem(
-                icon = { Icon(item.icon, contentDescription = item.title) },
-                label = { Text(item.title) },
-                selected = currentDestination == item.route,
+                icon = {
+                    Icon(
+                        painter = painterResource(id = if (isSelected) item.imageResSelected else item.imageRes),
+                        contentDescription = item.route,
+                        tint = Color.Unspecified
+                        //item.icon,
+                        //contentDescription = item.title
+                    )
+                },
+
+                //label = { /*Text(item.title) */},
+                selected = isSelected, //currentDestination == item.route,
                 onClick = {
                     navController.navigate(item.route) {
                         popUpTo(navController.graph.startDestinationId) { saveState = true }
                         launchSingleTop = true
                         restoreState = true
                     }
-                },
+                }/*,
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = Color.Black,
-                    selectedTextColor = Color.Black,
+                    //selectedTextColor = Color.Black,
                     unselectedIconColor = Color.Gray,
-                    unselectedTextColor = Color.Gray,
+                    //unselectedTextColor = Color.Gray,
                     indicatorColor = Color.LightGray // Optional: when selected
+                )
+                */,
+                colors = NavigationBarItemDefaults.colors(
+                    selectedIconColor = Color.Unspecified, // Prevents tinting
+                    unselectedIconColor = Color.Unspecified, // Prevents gray shadow
+                    indicatorColor = Color.Transparent // Removes selection background
                 )
             )
         }

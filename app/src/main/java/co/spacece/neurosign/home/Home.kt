@@ -31,46 +31,49 @@ fun HomeScreen(navController: NavHostController) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
+    /*
     val menuItems = listOf(
         MenuItem(Icons.Default.Info, "About Us", "about"),
         MenuItem(Icons.Default.MoreVert, "Our Products", "products"),
         MenuItem(Icons.Default.Phone, "Contact Us", "contact")
     )
+
+     */
+
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
             DrawerContent(
+                drawerState = drawerState,
+                scope = scope,
                 onItemClick = { route ->
-                    scope.launch { drawerState.close() }
                     innerNavController.navigate(route)
-                },
-                onClose = {
-                    scope.launch { drawerState.close() }
                 }
             )
-        }
-    ) {
-        Scaffold(
-            topBar = {
-                AppTopBar(title = "NeuroSign",
-                    onMenuClick = {
-                        scope.launch { drawerState.open() }
-                    })
-            },
-            bottomBar = {
-                BottomNavigation(innerNavController)
+        },
+        gesturesEnabled = drawerState.isOpen// Ensure gestures are enabled only when open
+    ){ // Define what the main content should be
+            Scaffold(
+                topBar = {
+                    AppTopBar(title = "NeuroSign",
+                        onMenuClick = {
+                            scope.launch { drawerState.open() }
+                        }
+                    )
+                },
+                bottomBar = {
+                    BottomNavigation(innerNavController)
+                }
+            ) { paddingValues ->
+                NavHost(
+                    navController = innerNavController,
+                    startDestination = "products",
+                    modifier = Modifier.padding(paddingValues)
+                ) {
+                    composable("products") { OurProductsScreen() }
+                    composable("about") { AboutUsScreen() }
+                    composable("contact") { ContactUsScreen() }
+                }
             }
-        ) { paddingValues ->
-            NavHost(
-                navController = innerNavController,
-                startDestination = "products",
-                modifier = Modifier.padding(paddingValues)
-            ) {
-                composable("products") { OurProductsScreen() }
-                composable("about") { AboutUsScreen() }
-                composable("contact") { ContactUsScreen() }
-            }
         }
-    }
-
 }
