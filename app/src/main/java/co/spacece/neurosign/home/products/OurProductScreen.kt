@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import co.spacece.neurosign.Navigation.AppTopBar
 import co.spacece.neurosign.Navigation.BottomNavigation
@@ -21,74 +22,76 @@ import kotlinx.serialization.Serializable
 
 
 @Composable
-fun OurProductsScreen(){
+fun OurProductsScreen(navController: NavController){
 
     val products = listOf(
         Product(
             id = 1,
             icon = R.drawable.sports_soccer,
             title = "Hobby Predictor",
-            description = "Hobby Predictor is an AI-based tool designed to predict a child's potential hobbies..."
+            description = "Hobby Predictor is an AI-based tool designed to predict a child's potential hobbies...",
+            route = "hobby_predictor"
         ),
         Product(
             id = 2,
             icon = R.drawable.account_child,
             title = "Early Childhood Assessment",
-            description = "Early Learning Assessment Tool is an intelligent solution designed to..."
+            description = "Early Learning Assessment Tool is an intelligent solution designed to...",
+            route = "early_assessment"
         ),
         Product(
             id = 3,
             icon = R.drawable.sign_language,
             title = "Sign-Language Translator",
-            description = "Sign-Language Translator is an AI-Powered application that translates sign-language gestures into words and vice-versa..."
+            description = "Sign-Language Translator is an AI-Powered application that translates sign-language gestures into words and vice-versa...",
+            route = "sign_language"
         ),
         Product(
             id = 4,
             icon = R.drawable.history_edu,
             title = "Personalized AI Story Generator",
-            description = "AI Story Generator is a tool that uses AI to generate fun and exciting personalized stories..."
+            description = "AI Story Generator is a tool that uses AI to generate fun and exciting personalized stories...",
+            route = "story_generator"
         )
     )
-
-
-        Box(
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFFEEEEEE))
+            .padding(12.dp)
+    ) {
+        Card(
             modifier = Modifier
-                .fillMaxSize()
-                .background(Color(0xFFEEEEEE))
-                .padding(12.dp)
+                .fillMaxWidth()
+                .padding(8.dp)
+                .shadow(4.dp, shape = MaterialTheme.shapes.medium),
+            colors = CardDefaults.cardColors(containerColor = Color.White)
         ) {
-            Card(
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp)
-                    .shadow(4.dp, shape = MaterialTheme.shapes.medium),
-                colors = CardDefaults.cardColors(containerColor = Color.White)
+                    .padding(16.dp)
+                    .fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Column(
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = "Our Products",
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(bottom = 16.dp)
-                    )
+                Text(
+                    text = "Our Products",
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
 
-                    LazyColumn(
-                        verticalArrangement = Arrangement.spacedBy(12.dp),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        items(products) { product ->
-                            ProductsCard(product = product)
-                        }
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    items(products) { product ->
+                        ProductsCard(product = product, navController = navController)
                     }
                 }
             }
         }
     }
+}
 
 
 @Serializable

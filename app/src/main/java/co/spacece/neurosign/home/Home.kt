@@ -48,7 +48,8 @@ fun HomeScreen(navController: NavHostController) {
                 scope = scope,
                 onItemClick = { route ->
                     innerNavController.navigate(route)
-                }
+                },
+
             )
         },
         gesturesEnabled = drawerState.isOpen// Ensure gestures are enabled only when open
@@ -70,7 +71,7 @@ fun HomeScreen(navController: NavHostController) {
                     startDestination = "products",
                     modifier = Modifier.padding(paddingValues)
                 ) {
-                    composable("products") { OurProductsScreen() }
+                    composable("products") { OurProductsScreen(navController) }
                     composable("about") { AboutUsScreen() }
                     composable("contact") { ContactUsScreen() }
                 }

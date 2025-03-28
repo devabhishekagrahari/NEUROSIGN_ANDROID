@@ -1,6 +1,7 @@
 package co.spacece.neurosign.home.products
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -12,12 +13,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun ProductsCard(product: Product) {
+fun ProductsCard(product: Product, navController: NavController) {
     Card(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .padding(8.dp),
+            //.clickable { navController.navigate(product.route) },
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(3.dp),
         shape = MaterialTheme.shapes.medium
@@ -49,7 +53,7 @@ fun ProductsCard(product: Product) {
             )
 
             Button(
-                onClick = { /* TODO: Handle click */ },
+                onClick = { navController.navigate(product.route) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 8.dp)

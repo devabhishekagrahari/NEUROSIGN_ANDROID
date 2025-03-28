@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import co.spacece.neurosign.R
 
 
@@ -33,7 +34,8 @@ fun AppTopBar(title:String, onMenuClick: () -> Unit) {
                     contentDescription = "Logo",
                     modifier = Modifier.size(40.dp)
                 )
-                Text(text = title)
+                Text(text = title,fontSize = 16.sp,)
+
             }
         },
         actions = {
