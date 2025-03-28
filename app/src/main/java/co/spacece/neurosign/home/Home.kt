@@ -1,18 +1,21 @@
 package co.spacece.neurosign.Home
 
 import ContactUsScreen
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -31,50 +34,43 @@ fun HomeScreen(navController: NavHostController) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
-    /*
-    val menuItems = listOf(
-        MenuItem(Icons.Default.Info, "About Us", "about"),
-        MenuItem(Icons.Default.MoreVert, "Our Products", "products"),
-        MenuItem(Icons.Default.Phone, "Contact Us", "contact")
-    )
-
-     */
-
     ModalNavigationDrawer(
         drawerState = drawerState,
+        scrimColor = Color.Transparent, // Prevents overlay color on background
         drawerContent = {
-            DrawerContent(
-                drawerState = drawerState,
-                scope = scope,
-                onItemClick = { route ->
-                    innerNavController.navigate(route)
-                },
-
-            )
+            ModalDrawerSheet(
+                modifier = Modifier.background(Color.White) // Explicitly setting white background
+            ) {
+                DrawerContent(
+                    drawerState = drawerState,
+                    scope = scope,
+                    onItemClick = { route ->
+                        innerNavController.navigate(route)
+                    }
+                )
+            }
         },
-        gesturesEnabled = drawerState.isOpen// Ensure gestures are enabled only when open
-    ){ // Define what the main content should be
-            Scaffold(
-                topBar = {
-                    AppTopBar(title = "NeuroSign",
-                        onMenuClick = {
-                            scope.launch { drawerState.open() }
-                        }
-                    )
-                },
-                bottomBar = {
-                    BottomNavigation(innerNavController)
+        gesturesEnabled = drawerState.isOpen
+    ) {
+        Scaffold(
+            topBar = {
+                AppTopBar(title = "NeuroSign") {
+                    scope.launch { drawerState.open() }
                 }
-            ) { paddingValues ->
-                NavHost(
-                    navController = innerNavController,
-                    startDestination = "products",
-                    modifier = Modifier.padding(paddingValues)
-                ) {
-                    composable("products") { OurProductsScreen(navController) }
-                    composable("about") { AboutUsScreen() }
-                    composable("contact") { ContactUsScreen() }
-                }
+            },
+            bottomBar = {
+                BottomNavigation(innerNavController)
+            }
+        ) { paddingValues ->
+            NavHost(
+                navController = innerNavController,
+                startDestination = "products",
+                modifier = Modifier.padding(paddingValues)
+            ) {
+                composable("products") { OurProductsScreen(navController) }
+                composable("about") { AboutUsScreen() }
+                composable("contact") { ContactUsScreen() }
             }
         }
+    }
 }

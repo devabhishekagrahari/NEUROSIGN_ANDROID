@@ -27,8 +27,7 @@ fun ProductsCard(product: Product, navController: NavController) {
         shape = MaterialTheme.shapes.medium
     ) {
         Column(
-            modifier = Modifier
-                .padding(16.dp),
+            modifier = Modifier.fillMaxWidth().padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
@@ -43,7 +42,8 @@ fun ProductsCard(product: Product, navController: NavController) {
                 text = product.title,
                 fontSize = 18.sp,
                 fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colorScheme.primary
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
             )
 
             Text(

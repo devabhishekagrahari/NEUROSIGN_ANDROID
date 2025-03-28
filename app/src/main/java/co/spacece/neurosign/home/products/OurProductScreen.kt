@@ -69,13 +69,13 @@ fun OurProductsScreen(navController: NavController){
         ) {
             Column(
                 modifier = Modifier
-                    .padding(16.dp)
+                    .padding(6.dp)
                     .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
                     text = "Our Products",
-                    fontSize = 24.sp,
+                    fontSize = 32.sp,
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier.padding(bottom = 16.dp)
                 )

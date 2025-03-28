@@ -44,14 +44,17 @@ fun DrawerContent(
     )
 
     ModalDrawerSheet(
-        modifier = Modifier.width(220.dp)
+        modifier = Modifier.width(220.dp),
+        drawerContainerColor = Color.White,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxHeight()
+                .background(Color.White)
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+
             Box(
                 modifier = Modifier.fillMaxWidth(),
                 contentAlignment = Alignment.CenterEnd
@@ -75,7 +78,7 @@ fun DrawerContent(
                         Image(
                             painter = painterResource(id = item.imageRes),
                             contentDescription = null,
-                            modifier = Modifier.size(100.dp)
+                            modifier = Modifier.size(100.dp),
                         )
                     },
                     label = {},
