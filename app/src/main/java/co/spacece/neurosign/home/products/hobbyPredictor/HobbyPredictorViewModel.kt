@@ -1,7 +1,7 @@
 package co.spacece.neurosign.home.products.hobbyPredictor
 
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavHostController
+import co.spacece.neurosign.R
 import co.spacece.neurosign.home.products.hobbyPredictor.ui.Questions
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,6 +15,22 @@ data class HobbyPredictorQuestionAnswerModel(
 class HobbyPredictorViewModel(
 ):ViewModel(){
 
+    private val _hpResultActivitySuggestions = MutableStateFlow<List<OARVViewDataModel>>(
+        listOf(
+        OARVViewDataModel(
+            description = "Description - ", content = " Inflate a balloon and carry out different games with kids such as having kids keep it in the air for as long as possible by tapping it and many more.", materialRequired = "Materials Required - ", mrContent="Balloon", heading="Balloon Games", imageId= R.drawable.demo_photo_for_hp_results),
+            OARVViewDataModel(
+                description = "Description - ", content = " Inflate a balloon and carry out different games with kids such as having kids keep it in the air for as long as possible by tapping it and many more.", materialRequired = "Materials Required - ", mrContent="Balloon", heading="Balloon Games", imageId= R.drawable.demo_photo_for_hp_results),
+            OARVViewDataModel(
+                description = "Description - ", content = " Inflate a balloon and carry out different games with kids such as having kids keep it in the air for as long as possible by tapping it and many more.", materialRequired = "Materials Required - ", mrContent="Balloon", heading="Balloon Games", imageId= R.drawable.demo_photo_for_hp_results),
+            OARVViewDataModel(
+                description = "Description - ", content = " Inflate a balloon and carry out different games with kids such as having kids keep it in the air for as long as possible by tapping it and many more.", materialRequired = "Materials Required - ", mrContent="Balloon", heading="Balloon Games", imageId= R.drawable.demo_photo_for_hp_results),
+            OARVViewDataModel(
+                description = "Description - ", content = " Inflate a balloon and carry out different games with kids such as having kids keep it in the air for as long as possible by tapping it and many more.", materialRequired = "Materials Required - ", mrContent="Balloon", heading="Balloon Games", imageId= R.drawable.demo_photo_for_hp_results)
+
+        ))
+    val hpbResultActivitySuggestions = _hpResultActivitySuggestions.asStateFlow()
+
     private val _hobbyPredictorQuestionAnswerList = MutableStateFlow(
         listOf(
             HobbyPredictorQuestionAnswerModel(Questions.One.question, ""),
@@ -27,8 +43,6 @@ class HobbyPredictorViewModel(
             HobbyPredictorQuestionAnswerModel(Questions.Eight.question, ""),
             HobbyPredictorQuestionAnswerModel(Questions.Nine.question,""),
             HobbyPredictorQuestionAnswerModel(Questions.Ten.question,""),
-
-
             )
     )
     val hobbyPredictorQuestionAnswerList = _hobbyPredictorQuestionAnswerList.asStateFlow()
