@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,12 +19,14 @@ import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.InlineTextContent
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.text.appendInlineContent
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.PlaceholderVerticalAlign
@@ -45,6 +46,7 @@ fun HobbyPredictorQuestionsView(){
     Column(modifier = Modifier
         .fillMaxWidth()
         .padding(16.dp)
+        .shadow(4.dp, shape = MaterialTheme.shapes.medium)
         .clip(RoundedCornerShape(12.dp))
         .background(Color.White)
         .padding(16.dp)
@@ -149,7 +151,11 @@ fun HobbyPredictorQuestionsView(){
         CustomNumberInputField(hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Five.question }!!,viewModel){
             viewModel.setHobbyPredictorQuestionAnswerListAnswer(
                 Questions.Five.question,
-                it
+                if(it!=""){
+                    if(it.toInt()>6 || it.toInt()==0) "6"
+                    else it
+                }
+                else it
             )
         }
         Spacer(modifier = Modifier.height(24.dp))
@@ -158,7 +164,8 @@ fun HobbyPredictorQuestionsView(){
         TextWithAsterisk(text = Questions.Six.question)
         Row (modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 12.dp)){
+            .padding(horizontal = 12.dp))
+        {
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Six.question }!!.answer==R.string.yes.toString(),
@@ -184,7 +191,8 @@ fun HobbyPredictorQuestionsView(){
         TextWithAsterisk(text = Questions.Seven.question)
         Row (modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 12.dp)){
+            .padding(horizontal = 12.dp))
+        {
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Seven.question }!!.answer==R.string.yes.toString(),
@@ -210,7 +218,7 @@ fun HobbyPredictorQuestionsView(){
         TextWithAsterisk(text = Questions.Eight.question)
         Row (modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 12.dp)){
+            .padding(horizontal = 12.dp)) {
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Eight.question }!!.answer==R.string.yes.toString(),
@@ -236,7 +244,8 @@ fun HobbyPredictorQuestionsView(){
         TextWithAsterisk(text = Questions.Nine.question)
         Row (modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 12.dp)){
+            .padding(horizontal = 12.dp))
+        {
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.36F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Nine.question }!!.answer==R.string.yes.toString(),
@@ -265,16 +274,20 @@ fun HobbyPredictorQuestionsView(){
                 Text(text = "Maybe")
             }
         }
-        Spacer(modifier = Modifier.height(24.dp))
 
         //ten
         TextWithAsterisk(text = Questions.Ten.question)
         CustomNumberInputField(hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Ten.question }!!,viewModel){
             viewModel.setHobbyPredictorQuestionAnswerListAnswer(
                 Questions.Ten.question,
-                it
+                if(it!=""){
+                    if(it.toInt()>6 || it.toInt()==0) "6"
+                    else it
+                }
+                else it
             )
         }
+        Spacer(modifier = Modifier.height(24.dp))
     }
 }
 
