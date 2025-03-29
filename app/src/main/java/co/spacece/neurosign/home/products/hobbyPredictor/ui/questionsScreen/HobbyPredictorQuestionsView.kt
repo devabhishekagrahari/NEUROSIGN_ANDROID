@@ -1,4 +1,4 @@
-package co.spacece.neurosign.home.products.hobbyPredictor.ui
+package co.spacece.neurosign.home.products.hobbyPredictor.ui.questionsScreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -39,6 +39,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import co.spacece.neurosign.R
 import co.spacece.neurosign.home.products.hobbyPredictor.HobbyPredictorQuestionAnswerModel
 import co.spacece.neurosign.home.products.hobbyPredictor.HobbyPredictorViewModel
+import co.spacece.neurosign.home.products.hobbyPredictor.ui.Questions
 import co.spacece.neurosign.ui.theme.Light
 
 @Composable

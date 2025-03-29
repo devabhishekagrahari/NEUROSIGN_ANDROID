@@ -1,6 +1,7 @@
 package co.spacece.neurosign.home.products.hobbyPredictor
 
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavHostController
 import co.spacece.neurosign.home.products.hobbyPredictor.ui.Questions
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -11,7 +12,8 @@ data class HobbyPredictorQuestionAnswerModel(
     val answer:String
 )
 
-class HobbyPredictorViewModel:ViewModel(){
+class HobbyPredictorViewModel(
+):ViewModel(){
 
     private val _hobbyPredictorQuestionAnswerList = MutableStateFlow(
         listOf(

@@ -1,4 +1,4 @@
-package co.spacece.neurosign.home.products.hobbyPredictor.ui
+package co.spacece.neurosign.home.products.hobbyPredictor.ui.resultScreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -10,14 +10,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import co.spacece.neurosign.ui.theme.Background
 
-
 @Composable
-fun HobbyPredictorScreenView( paddingValues: PaddingValues){
+fun HobbyPredictorResultView( paddingValues: PaddingValues){
     Column(modifier = Modifier
         .padding(paddingValues)
         .background(Background)
         .verticalScroll(rememberScrollState())) {
-        HobbyPredictorQuestionsView()
-        PredictHobbyButton()
     }
-    }
+}

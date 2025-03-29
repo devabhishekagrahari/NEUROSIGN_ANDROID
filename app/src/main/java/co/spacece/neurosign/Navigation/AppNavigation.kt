@@ -11,8 +11,9 @@ import co.spacece.neurosign.Home.Products.Assessment.EarlyAssessmentScreen
 import co.spacece.neurosign.Home.Products.SignLanguage.SignLanguageScreen
 import co.spacece.neurosign.Home.Products.StoryTelling.StoryGeneratorScreen
 import co.spacece.neurosign.Home.Splash.SplashScreen
-import co.spacece.neurosign.home.products.hobbyPredictor.ui.HobbyPredictorScreen
+import co.spacece.neurosign.home.products.hobbyPredictor.ui.questionsScreen.HobbyPredictorQuestionScreen
 import co.spacece.neurosign.home.products.OurProductsScreen
+import co.spacece.neurosign.home.products.hobbyPredictor.ui.resultScreen.HobbyPredictorResultScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
@@ -22,9 +23,10 @@ fun AppNavigation(navController: NavHostController) {
         composable("products") { OurProductsScreen(navController) }
         composable("about") { AboutUsScreen() }
         composable("contact") { ContactUsScreen() }
-        composable("hobby_predictor") { HobbyPredictorScreen(navController) }
+        composable("hobby_predictor") { HobbyPredictorQuestionScreen(navController) }
         composable("early_assessment") { EarlyAssessmentScreen(navController) }
         composable("sign_language") { SignLanguageScreen(navController) }
         composable("story_generator") { StoryGeneratorScreen(navController) }
+        composable("hobby_predictor_result_screen") { HobbyPredictorResultScreen(navController) }
     }
 }
