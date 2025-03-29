@@ -28,9 +28,6 @@ fun EarlyAssessmentScreen(navController: NavController) {
     )
 
     Column(modifier = Modifier.fillMaxSize()) {
-        AppTopBar(title = "Early Childhood Assessment") {
-            navController.popBackStack()
-        }
 
         LazyColumn(
             modifier = Modifier

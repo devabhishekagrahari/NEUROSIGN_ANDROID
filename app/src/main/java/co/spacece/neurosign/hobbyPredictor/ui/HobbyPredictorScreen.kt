@@ -12,15 +12,7 @@ import kotlinx.serialization.Serializable
 
 @Composable
 fun HobbyPredictorScreen(navController: NavHostController) {
-    Scaffold(modifier = Modifier.fillMaxSize(),
-        topBar = { AppTopBar(title = "Hobby Predictor"){
-            navController.popBackStack()
-        } },
-        bottomBar = { BottomNavigation(navController = navController)}
-    ){paddingValues ->
-        HobbyPredictorScreenView(paddingValues)
-    }
-
+    HobbyPredictorScreenView()
 }
 @Serializable
 object ScreenB

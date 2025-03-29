@@ -11,11 +11,11 @@ import co.spacece.neurosign.hobbyPredictor.HobbyPredictorViewModel
 
 
 @Composable
-fun HobbyPredictorScreenView( paddingValues: PaddingValues){
+fun HobbyPredictorScreenView( )
+{
     Column(modifier = Modifier
-        .padding(paddingValues)
         .verticalScroll(rememberScrollState())) {
         HobbyPredictorQuestionsView()
         PredictHobbyButton()
     }
-    }
+}

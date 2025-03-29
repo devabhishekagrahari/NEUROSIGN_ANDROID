@@ -41,9 +41,7 @@ fun LearningDisorderDetection(navController: NavController) {
         verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
         item {
-            AppTopBar(title = "Early Childhood Assessment") {
-                navController.popBackStack()
-            }
+
         }
 
         item {
@@ -79,7 +77,7 @@ fun LearningDisorderDetection(navController: NavController) {
 
                     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                         Button(
-                            onClick = { navController.navigate("next_screen") },
+                            onClick = { navController.navigate("begin_assessment") },
                             modifier = Modifier.fillMaxWidth(),
                             colors = ButtonDefaults.buttonColors(containerColor = AppPrimary)
                         ) {
@@ -91,7 +89,7 @@ fun LearningDisorderDetection(navController: NavController) {
                         }
 
                         OutlinedButton(
-                            onClick = { navController.popBackStack() },
+                            onClick = { navController.navigate("begin_assessment")  },
                             modifier = Modifier.fillMaxWidth(),
                             colors = ButtonDefaults.outlinedButtonColors(contentColor = AppPrimary)
                         ) {

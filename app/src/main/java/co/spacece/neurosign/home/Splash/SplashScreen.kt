@@ -79,7 +79,7 @@ fun SplashScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.fillMaxHeight(0.075f))
 
-            Button(onClick = { navController.navigate("home") } ,
+            Button(onClick = { navController.navigate("products") } ,
                     shape = RectangleShape, // Makes the button rectangular
                     modifier = Modifier
                     .fillMaxWidth(0.85f) // Makes it stretch horizontally
