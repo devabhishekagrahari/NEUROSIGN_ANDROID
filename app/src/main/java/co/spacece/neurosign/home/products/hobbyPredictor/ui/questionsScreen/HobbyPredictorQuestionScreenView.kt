@@ -13,9 +13,8 @@ import co.spacece.neurosign.ui.theme.Background
 
 
 @Composable
-fun HobbyPredictorScreenView(paddingValues: PaddingValues, navController: NavHostController){
+fun HobbyPredictorScreenView( navController: NavHostController){
     Column(modifier = Modifier
-        .padding(paddingValues)
         .background(Background)
         .verticalScroll(rememberScrollState())) {
         HobbyPredictorQuestionsView()

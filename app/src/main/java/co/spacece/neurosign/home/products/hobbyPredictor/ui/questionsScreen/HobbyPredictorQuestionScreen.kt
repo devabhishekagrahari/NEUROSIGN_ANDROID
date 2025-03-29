@@ -9,10 +9,5 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun HobbyPredictorQuestionScreen(navController: NavHostController) {
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-    ){paddingValues ->
-        HobbyPredictorScreenView(paddingValues,navController)
-    }
-
+        HobbyPredictorScreenView(navController)
 }

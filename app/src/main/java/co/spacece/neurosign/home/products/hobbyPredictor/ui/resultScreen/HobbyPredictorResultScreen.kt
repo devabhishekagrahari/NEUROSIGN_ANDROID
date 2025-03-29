@@ -9,13 +9,6 @@ import co.spacece.neurosign.Navigation.AppTopBar
 import co.spacece.neurosign.Navigation.BottomNavigation
 
 @Composable
-fun HobbyPredictorResultScreen(navController: NavHostController){
-    Scaffold(modifier = Modifier.fillMaxSize(),
-        topBar = { AppTopBar(title = "Hobby Predictor"){
-            navController.popBackStack()
-        } },
-        bottomBar = { BottomNavigation(navController = navController) }
-    ){paddingValues ->
-        HobbyPredictorResultView(paddingValues)
-    }
+fun HobbyPredictorResultScreen(){
+        HobbyPredictorResultView()
 }

@@ -10,10 +10,9 @@ import androidx.compose.ui.Modifier
 import co.spacece.neurosign.ui.theme.Background
 
 @Composable
-fun HobbyPredictorResultView( paddingValues: PaddingValues){
+fun HobbyPredictorResultView(){
     LazyColumn(modifier = Modifier
         .fillMaxSize()
-        .padding(paddingValues)
         .background(Background)
     ) {
         item {
