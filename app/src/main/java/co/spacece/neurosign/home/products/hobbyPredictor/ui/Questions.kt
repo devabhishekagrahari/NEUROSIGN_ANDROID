@@ -1,4 +1,4 @@
-package co.spacece.neurosign.hobbyPredictor.ui
+package co.spacece.neurosign.home.products.hobbyPredictor.ui
 
 enum class Questions(val question:String) {
 

@@ -14,10 +14,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
-import co.spacece.neurosign.Navigation.AppTopBar
-import co.spacece.neurosign.Navigation.BottomNavigation
 import co.spacece.neurosign.R
+import co.spacece.neurosign.ui.theme.Background
 import kotlinx.serialization.Serializable
 
 
@@ -57,7 +55,7 @@ fun OurProductsScreen(navController: NavController){
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFEEEEEE))
+            .background(Background)
             .padding(12.dp)
     ) {
         Card(

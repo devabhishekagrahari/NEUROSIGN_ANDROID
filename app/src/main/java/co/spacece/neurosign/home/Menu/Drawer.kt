@@ -26,7 +26,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import co.spacece.neurosign.R
-import co.spacece.neurosign.ui.theme.LightGray
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

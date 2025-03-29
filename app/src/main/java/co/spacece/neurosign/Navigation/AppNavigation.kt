@@ -14,9 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import co.spacece.neurosign.Home.About.AboutUsScreen
-import co.spacece.neurosign.Home.HomeScreen
 import co.spacece.neurosign.Home.Menu.DrawerContent
 import co.spacece.neurosign.Home.Products.Assessment.BeginAssessment
 import co.spacece.neurosign.Home.Products.Assessment.EarlyAssessmentScreen
@@ -25,8 +23,9 @@ import co.spacece.neurosign.Home.Products.Assessment.WelcomeAssessment
 import co.spacece.neurosign.Home.Products.SignLanguage.SignLanguageScreen
 import co.spacece.neurosign.Home.Products.StoryTelling.StoryGeneratorScreen
 import co.spacece.neurosign.Home.Splash.SplashScreen
-import co.spacece.neurosign.hobbyPredictor.ui.HobbyPredictorScreen
+import co.spacece.neurosign.home.products.hobbyPredictor.ui.questionsScreen.HobbyPredictorQuestionScreen
 import co.spacece.neurosign.home.products.OurProductsScreen
+import co.spacece.neurosign.home.products.hobbyPredictor.ui.resultScreen.HobbyPredictorResultScreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -77,13 +76,14 @@ fun AppNavigation(navController: NavHostController, scope: CoroutineScope, drawe
                 composable("products") { OurProductsScreen(navController) }
                 composable("about") { AboutUsScreen() }
                 composable("contact") { ContactUsScreen() }
-                composable("hobby_predictor") { HobbyPredictorScreen(navController) }
+                composable("hobby_predictor") { HobbyPredictorQuestionScreen(navController) }
                 composable("early_assessment") { EarlyAssessmentScreen(navController) }
                 composable("sign_language") { SignLanguageScreen(navController) }
                 composable("story_generator") { StoryGeneratorScreen(navController) }
                 composable("learn_detection") { LearningDisorderDetection(navController) }
                 composable("begin_assessment") { BeginAssessment(navController, scope, drawerState) }
                 composable("welcome") { WelcomeAssessment(navController) }
+                composable("hobby_predictor_result_screen") { HobbyPredictorResultScreen() }
             }
         }
     }
@@ -101,6 +101,7 @@ fun getScreenTitle(route: String?): String {
         "story_generator" -> "AI Story Generator"
         "learn_detection" -> "Learning Disorder Detection"
         "begin_assessment" -> "Begin Assessment"
+        "hobby_predictor_result_screen" -> "Hobby Predictor"
         else -> "NeuroSign"
     }
 }

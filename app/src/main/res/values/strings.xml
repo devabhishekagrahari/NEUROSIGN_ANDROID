@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">NeuroSign</string>
     <string name="predict_hobby">Predict Hobby</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="maybe">maybe</string>
 </resources>
