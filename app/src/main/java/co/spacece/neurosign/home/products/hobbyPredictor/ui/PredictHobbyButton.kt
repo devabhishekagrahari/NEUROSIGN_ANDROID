@@ -1,4 +1,4 @@
-package co.spacece.neurosign.hobbyPredictor.ui
+package co.spacece.neurosign.home.products.hobbyPredictor.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-package co.spacece.neurosign.hobbyPredictor.ui
+package co.spacece.neurosign.home.products.hobbyPredictor.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -36,8 +36,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import co.spacece.neurosign.R
-import co.spacece.neurosign.hobbyPredictor.HobbyPredictorQuestionAnswerModel
-import co.spacece.neurosign.hobbyPredictor.HobbyPredictorViewModel
+import co.spacece.neurosign.home.products.hobbyPredictor.HobbyPredictorQuestionAnswerModel
+import co.spacece.neurosign.home.products.hobbyPredictor.HobbyPredictorViewModel
 import co.spacece.neurosign.ui.theme.Light
 
 @Composable
@@ -74,7 +74,8 @@ fun HobbyPredictorQuestionsView(){
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Two.question }!!.answer==R.string.yes.toString(),
-                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Two.question,
+                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Two.question,
                         R.string.yes.toString()
                     ) })
                 Text(text = "Yes")
@@ -82,7 +83,8 @@ fun HobbyPredictorQuestionsView(){
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Two.question }!!.answer==R.string.no.toString(),
-                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Two.question,
+                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Two.question,
                         R.string.no.toString()
                     ) })
                 Text(text = "No")
@@ -98,7 +100,8 @@ fun HobbyPredictorQuestionsView(){
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Three.question }!!.answer==R.string.yes.toString(),
-                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Three.question,
+                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Three.question,
                         R.string.yes.toString()
                     ) })
                 Text(text = "Yes")
@@ -106,7 +109,8 @@ fun HobbyPredictorQuestionsView(){
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Three.question }!!.answer==R.string.no.toString(),
-                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Three.question,
+                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Three.question,
                         R.string.no.toString()
                     ) })
                 Text(text = "No")
@@ -122,7 +126,8 @@ fun HobbyPredictorQuestionsView(){
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Four.question }!!.answer==R.string.yes.toString(),
-                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Four.question,
+                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Four.question,
                         R.string.yes.toString()
                     ) })
                 Text(text = "Yes")
@@ -130,7 +135,8 @@ fun HobbyPredictorQuestionsView(){
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Four.question }!!.answer==R.string.no.toString(),
-                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Four.question,
+                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Four.question,
                         R.string.no.toString()
                     ) })
                 Text(text = "No")
@@ -156,7 +162,8 @@ fun HobbyPredictorQuestionsView(){
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Six.question }!!.answer==R.string.yes.toString(),
-                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Six.question,
+                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Six.question,
                         R.string.yes.toString()
                     ) })
                 Text(text = "Yes")
@@ -164,7 +171,8 @@ fun HobbyPredictorQuestionsView(){
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Six.question }!!.answer==R.string.no.toString(),
-                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Six.question,
+                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Six.question,
                         R.string.no.toString()
                     ) })
                 Text(text = "No")
@@ -180,7 +188,8 @@ fun HobbyPredictorQuestionsView(){
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Seven.question }!!.answer==R.string.yes.toString(),
-                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Seven.question,
+                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Seven.question,
                         R.string.yes.toString()
                     ) })
                 Text(text = "Yes")
@@ -188,7 +197,8 @@ fun HobbyPredictorQuestionsView(){
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Seven.question }!!.answer==R.string.no.toString(),
-                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Seven.question,
+                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Seven.question,
                         R.string.no.toString()
                     ) })
                 Text(text = "No")
@@ -204,7 +214,8 @@ fun HobbyPredictorQuestionsView(){
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Eight.question }!!.answer==R.string.yes.toString(),
-                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Eight.question,
+                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Eight.question,
                         R.string.yes.toString()
                     ) })
                 Text(text = "Yes")
@@ -212,7 +223,8 @@ fun HobbyPredictorQuestionsView(){
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.5F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Eight.question }!!.answer==R.string.no.toString(),
-                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Eight.question,
+                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Eight.question,
                         R.string.no.toString()
                     ) })
                 Text(text = "No")
@@ -228,7 +240,8 @@ fun HobbyPredictorQuestionsView(){
             Row (verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.36F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Nine.question }!!.answer==R.string.yes.toString(),
-                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Nine.question,
+                    onClick = { viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Nine.question,
                         R.string.yes.toString()
                     ) })
                 Text(text = "Yes")
@@ -236,7 +249,8 @@ fun HobbyPredictorQuestionsView(){
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.36F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Nine.question }!!.answer==R.string.no.toString(),
-                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Nine.question,
+                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Nine.question,
                         R.string.no.toString()
                     ) })
                 Text(text = "No")
@@ -244,7 +258,8 @@ fun HobbyPredictorQuestionsView(){
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(0.36F)){
                 RadioButton(
                     selected = hobbyPredictorQuestionsAnswerList.value.find { it.question == Questions.Two.question }!!.answer==R.string.maybe.toString(),
-                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(Questions.Two.question,
+                    onClick = {  viewModel.setHobbyPredictorQuestionAnswerListAnswer(
+                        Questions.Two.question,
                         R.string.maybe.toString()
                     ) })
                 Text(text = "Maybe")

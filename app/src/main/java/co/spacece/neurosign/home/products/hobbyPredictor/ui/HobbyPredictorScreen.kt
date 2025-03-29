@@ -1,4 +1,4 @@
-package co.spacece.neurosign.hobbyPredictor.ui
+package co.spacece.neurosign.home.products.hobbyPredictor.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold

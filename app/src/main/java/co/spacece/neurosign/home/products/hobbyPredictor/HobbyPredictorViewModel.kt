@@ -1,7 +1,7 @@
-package co.spacece.neurosign.hobbyPredictor
+package co.spacece.neurosign.home.products.hobbyPredictor
 
 import androidx.lifecycle.ViewModel
-import co.spacece.neurosign.hobbyPredictor.ui.Questions
+import co.spacece.neurosign.home.products.hobbyPredictor.ui.Questions
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 

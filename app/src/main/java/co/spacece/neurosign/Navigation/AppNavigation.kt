@@ -11,7 +11,7 @@ import co.spacece.neurosign.Home.Products.Assessment.EarlyAssessmentScreen
 import co.spacece.neurosign.Home.Products.SignLanguage.SignLanguageScreen
 import co.spacece.neurosign.Home.Products.StoryTelling.StoryGeneratorScreen
 import co.spacece.neurosign.Home.Splash.SplashScreen
-import co.spacece.neurosign.hobbyPredictor.ui.HobbyPredictorScreen
+import co.spacece.neurosign.home.products.hobbyPredictor.ui.HobbyPredictorScreen
 import co.spacece.neurosign.home.products.OurProductsScreen
 
 @Composable
