@@ -24,7 +24,6 @@ import co.spacece.neurosign.ui.theme.Primary
 
 @Composable
 fun PredictHobbyButton(navController: NavHostController) {
-    val viewmodel= viewModel<HobbyPredictorViewModel>()
     Button(onClick = {
     /*TODO*/
         navController.navigate("hobby_predictor_result_screen")

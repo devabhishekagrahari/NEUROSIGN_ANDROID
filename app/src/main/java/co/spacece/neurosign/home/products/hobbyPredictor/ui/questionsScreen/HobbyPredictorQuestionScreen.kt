@@ -22,5 +22,3 @@ fun HobbyPredictorQuestionScreen(navController: NavHostController) {
     }
 
 }
-@Serializable
-object ScreenB

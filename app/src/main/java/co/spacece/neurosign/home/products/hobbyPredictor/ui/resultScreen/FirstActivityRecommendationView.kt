@@ -60,17 +60,15 @@ fun FirstActivityRecommendationView() {
 fun FARDescription() {
     val description = "Description - "
     val content = "This is a test sentence to check how the text wraps properly when the sentence is long enough to shift to the next line."
-
-        Text(
-            text = buildAnnotatedString {
-                withStyle(style = SpanStyle(color = Primary, fontWeight = FontWeight.W600)) {
-                    append(description)
-                }
-                append(content)},
-
-            fontSize =20.sp,
-            color = Medium
-        )
+    Text(
+        text = buildAnnotatedString {
+            withStyle(style = SpanStyle(color = Primary, fontWeight = FontWeight.W600)) {
+                append(description)
+            }
+            append(content)},
+        fontSize =20.sp,
+        color = Medium
+    )
 }
 
 @Composable
