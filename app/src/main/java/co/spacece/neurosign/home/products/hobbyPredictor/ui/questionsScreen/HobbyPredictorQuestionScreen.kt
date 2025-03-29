@@ -5,18 +5,12 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import co.spacece.neurosign.Navigation.AppTopBar
-import co.spacece.neurosign.Navigation.BottomNavigation
-import kotlinx.serialization.Serializable
 
 
 @Composable
 fun HobbyPredictorQuestionScreen(navController: NavHostController) {
-    Scaffold(modifier = Modifier.fillMaxSize(),
-        topBar = { AppTopBar(title = "Hobby Predictor"){
-            navController.popBackStack()
-        } },
-        bottomBar = { BottomNavigation(navController = navController)}
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
     ){paddingValues ->
         HobbyPredictorScreenView(paddingValues,navController)
     }

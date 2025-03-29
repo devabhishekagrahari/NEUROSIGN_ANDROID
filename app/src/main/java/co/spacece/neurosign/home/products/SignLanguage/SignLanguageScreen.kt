@@ -12,9 +12,7 @@ import co.spacece.neurosign.Navigation.AppTopBar
 @Composable
 fun SignLanguageScreen(navController: NavController) {
     Column {
-        AppTopBar(title = "Sign-Language Translator") {
-            navController.popBackStack()
-        }
+
         Text(text = "Welcome to Sign-Language Translator!", modifier = Modifier.padding(16.dp))
     }
 }

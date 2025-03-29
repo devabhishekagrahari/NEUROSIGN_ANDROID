@@ -12,9 +12,7 @@ import co.spacece.neurosign.Navigation.AppTopBar
 @Composable
 fun StoryGeneratorScreen(navController: NavController) {
     Column {
-        AppTopBar(title = "AI Story Generator") {
-            navController.popBackStack()
-        }
+
         Text(text = "Welcome to AI Story Generator!", modifier = Modifier.padding(16.dp))
     }
 }
